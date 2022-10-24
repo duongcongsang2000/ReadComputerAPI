@@ -23,7 +23,7 @@ def get_computer_info():
     # DISK
     hdd = psutil.disk_usage('/')
     hhd_total = hdd.total / (2**30)
-    print(f"Total DISK: {hhd_total} GiB")
+    print("Total DISK: {hhd_total} GiB")
     # print("Used: {} GiB".format(hdd.used / (2**30)))
     # print("Free: {} GiB".format(hdd.free / (2**30)))
 
