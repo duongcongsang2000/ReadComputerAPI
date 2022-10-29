@@ -23,7 +23,7 @@ def get_computer_info():
     # DISK
     hdd = psutil.disk_usage('/')
     hhd_total = hdd.total / (2**30)
-    print("Total DISK: {hhd_total} GiB")
+    print('Total DISK: {hhd_total} GiB')
     # print("Used: {} GiB".format(hdd.used / (2**30)))
     # print("Free: {} GiB".format(hdd.free / (2**30)))
 
@@ -49,7 +49,12 @@ def add_info(url, TIME, CPU, RAM, DISK):
 
     print(response.text)
 
+    if response.status_code == 200:
+        data = response.json()
+        print(data['newData'])
 
+    else:
+        print("Loi server: ", response.status_code)
 if __name__ == '__main__':
     with open('config.json', 'r') as f:
         data = json.load(f)
