@@ -15,12 +15,12 @@ def index():
 @app.route("/info/get", methods=['GET'])
 def info_get():
     try:
-        TIME,RAM, CPU, HDD = Computer.get_computer_info()
+        TIME,RAM, CPU, SSD= Computer.get_computer_info()
         data = {
             "TIME": TIME,
             "RAM": RAM,
             "CPU": CPU,
-            "HDD": HDD
+            "SSD": SSD
         }
         return jsonify(data)
     except Exception as ex:
